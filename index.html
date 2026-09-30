@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <div id="output"></div>
+    <script>
+        function print(string){
+            document.getElementById("output").textContent=string;
+        }
+        function fetchJSONData() {
+            fetch('./sample.json')
+                .then(response => {
+                    if (!response.ok) {
+                        print("HTTP Error");
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    print(response.json());
+                    return response.json();  
+                })
+                .then(data => print(data))  
+                .catch(error => print('Failed to fetch data:', error)); 
+        }
+        fetchJSONData();  
+    </script>
+</body>
+</html>
