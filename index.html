@@ -8,7 +8,7 @@
             document.getElementById("output").textContent=string;
         }
         function fetchJSONData() {
-            fetch('./sample.json')
+            fetch('http:sample.json')
                 .then(response => {
                     if (!response.ok) {
                         print("HTTP Error");
