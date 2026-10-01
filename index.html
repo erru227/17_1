@@ -9,7 +9,7 @@
         }
         function fetchJSONData() {
             fetch('https://erru227.github.io/17_1/sample.json')
-                .then(response => {
+                .then((response) => {
                     if (!response.ok) {
                         print("HTTP Error");
                         throw new Error(`HTTP error! Status: ${response.status}`);
